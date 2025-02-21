@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Analog Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Premium stainless steel watch",
+      "price": 129.99
+    },
+    {
+      "id": 2,
+      "name": "Leather Jacket",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Genuine leather jacket",
+      "price": 199.99
+    },
+    {
+      "id": 3,
+      "name": "Gold Necklace",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "24K gold necklace",
+      "price": 599.99
+    },
+    {
+      "id": 4,
+      "name": "Gold Necklace 2",
+      "category": "Jewelry",
+      "subcategory": "Kids",
+      "description": "24K gold necklace",
+      "price": 599.99
+    }
+  ]
+}
