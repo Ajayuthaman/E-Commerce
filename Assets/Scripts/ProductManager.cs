@@ -38,6 +38,7 @@ public class ProductManager : MonoBehaviour
     [Header("Product Detail Panel")]
     public GameObject productDetailPanel;
     public TMP_Text detailProductName;
+    public TMP_Text category;
     public TMP_Text detailProductDescription;
     public TMP_Text detailProductPrice;
 
@@ -199,6 +200,7 @@ public class ProductManager : MonoBehaviour
     {
         productDetailPanel.SetActive(true);
         detailProductName.text = product.name;
+        category.text = product.subcategory;
         detailProductDescription.text = product.description;
         detailProductPrice.text = "$" + product.price.ToString("F2");
 

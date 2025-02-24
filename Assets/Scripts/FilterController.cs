@@ -38,11 +38,19 @@ public class FilterController : MonoBehaviour
         if (isOn)
         {
             if (!selectedCategories.Contains(category))
+            {
                 selectedCategories.Add(category);
+            }
         }
         else
         {
             selectedCategories.Remove(category);
+
+            // Disable subcategory parent when no categories are selected
+            if (selectedCategories.Count == 0)
+            {
+                subcategoryParent.gameObject.SetActive(false);
+            }
         }
 
         UpdateSubcategories();
@@ -50,37 +58,23 @@ public class FilterController : MonoBehaviour
 
     void UpdateSubcategories()
     {
-        // Clear only subcategories that are no longer relevant
-        List<string> subcategoriesToRemove = new List<string>();
-        foreach (var subcategoryKey in subcategoryToggles.Keys)
-        {
-            if (!IsSubcategoryRelevant(subcategoryKey))
-            {
-                Destroy(subcategoryToggles[subcategoryKey].gameObject);
-                subcategoriesToRemove.Add(subcategoryKey);
-            }
-        }
-
-        // Remove irrelevant subcategories from the dictionary
-        foreach (string subcategoryKey in subcategoriesToRemove)
-        {
-            subcategoryToggles.Remove(subcategoryKey);
-        }
+        // Enable subcategory parent if at least one main category is selected
+        subcategoryParent.gameObject.SetActive(selectedCategories.Count > 0);
 
         // Add new subcategories for selected categories
         foreach (string sub in productManager.subcategories)
         {
-            string subcategoryKey = sub; // Use subcategory name as the key
-            if (!subcategoryToggles.ContainsKey(subcategoryKey))
+            if (!subcategoryToggles.ContainsKey(sub))
             {
                 GameObject toggleObj = Instantiate(filterTogglePrefab, subcategoryParent);
                 toggleObj.GetComponentInChildren<Text>().text = sub;
                 Toggle toggle = toggleObj.GetComponent<Toggle>();
                 toggle.onValueChanged.AddListener((isOn) => OnSubcategoryToggled(sub, isOn));
-                subcategoryToggles[subcategoryKey] = toggle;
+                subcategoryToggles[sub] = toggle;
             }
         }
     }
+
 
     bool IsSubcategoryRelevant(string subcategoryKey)
     {
@@ -106,28 +100,24 @@ public class FilterController : MonoBehaviour
         productManager.ApplyFilters(selectedCategories, productManager.selectedSubcategories);
     }
 
-    public void ResetFilters()
+    void ResetFilters()
     {
         // Clear selected categories and subcategories
         selectedCategories.Clear();
         productManager.selectedSubcategories.Clear();
 
-        // Destroy all subcategory toggle GameObjects
+        // Uncheck and disable all subcategory toggles
         foreach (var toggle in subcategoryToggles.Values)
         {
-            if (toggle != null && toggle.gameObject != null)
+            if (toggle != null)
             {
-                Destroy(toggle.gameObject);
+                toggle.isOn = false;  // Uncheck the toggle
             }
         }
 
-        // Clear the subcategoryToggles dictionary
-        subcategoryToggles.Clear();
+        subcategoryParent.gameObject.SetActive(false);
 
-        // Force an immediate UI update
-        Canvas.ForceUpdateCanvases();
-
-        // Reset all category toggles
+        // Uncheck all category toggles
         foreach (Transform child in categoryParent)
         {
             Toggle toggle = child.GetComponent<Toggle>();
@@ -140,6 +130,7 @@ public class FilterController : MonoBehaviour
         // Reset the product list
         productManager.ResetFilters();
     }
+
 
     public void ToggleFilterPanel() => filterPanel.SetActive(!filterPanel.activeSelf);
 }
