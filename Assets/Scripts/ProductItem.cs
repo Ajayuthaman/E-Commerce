@@ -6,7 +6,8 @@ public class ProductItem : MonoBehaviour
 {
     [Header("UI References")]
     public TMP_Text productNameText;
-    public Toggle selectionToggle;
+    public TMP_Text price;
+    public Button productButton;
 
     private ProductManager.Product product;
     private ProductManager productManager;
@@ -16,11 +17,11 @@ public class ProductItem : MonoBehaviour
         product = productData;
         productManager = manager;
         productNameText.text = product.name;
-        selectionToggle.onValueChanged.AddListener(OnToggleChanged);
+        price.text = $"{product.price}$";
+
+
+        productButton.onClick.RemoveAllListeners();
+        productButton.onClick.AddListener(() => productManager.ShowProductDetails(productData));
     }
 
-    void OnToggleChanged(bool isSelected)
-    {
-        productManager.ToggleProductSelection(product.id);
-    }
 }

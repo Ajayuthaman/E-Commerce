@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 public class ProductManager : MonoBehaviour
 {
@@ -24,25 +26,43 @@ public class ProductManager : MonoBehaviour
     [Header("UI References")]
     public Transform productParent;
     public GameObject productPrefab;
+    public Button nextButton; 
+    public Button prevButton; 
+    public ScrollRect scrollRect; 
 
     [Header("Filter Settings")]
     public List<string> categories = new List<string> { "Watches", "Cloths", "Jewelry" };
     public List<string> subcategories = new List<string> { "Male", "Female", "Kids" };
+    public List<string> selectedSubcategories = new List<string>(); 
 
-    public List<string> selectedSubcategories = new List<string>(); // Track selected subcategories
+    [Header("Product Detail Panel")]
+    public GameObject productDetailPanel;
+    public TMP_Text detailProductName;
+    public TMP_Text detailProductDescription;
+    public TMP_Text detailProductPrice;
 
     private ProductData productData;
     private List<Product> currentProducts = new List<Product>();
     private List<GameObject> productPool = new List<GameObject>();
     private HashSet<int> selectedProducts = new HashSet<int>();
 
+    private int maxVisibleProducts = 16; // Number of products per page
+    private int currentPage = 0;
+    private List<Product> filteredProducts = new List<Product>(); // Store filtered list
+
+
     void Start()
     {
         LoadProducts();
-        InitializePool(20);
-        UpdateProducts(productData.products);
+        InitializePool(maxVisibleProducts);
+        ApplyFilters(categories, subcategories); // Apply filters on start
+        nextButton.onClick.AddListener(NextPage);
+        prevButton.onClick.AddListener(PrevPage);
+        prevButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
+        scrollRect.onValueChanged.AddListener(OnScrollValueChanged);
     }
-        
+
     void LoadProducts()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("Data/Products");
@@ -89,16 +109,22 @@ public class ProductManager : MonoBehaviour
         return newObj;
     }
 
-    public void UpdateProducts(List<Product> products)
+    public void UpdateProducts(int page)
     {
         foreach (GameObject obj in productPool) obj.SetActive(false);
 
-        for (int i = 0; i < products.Count; i++)
+        int startIdx = page * maxVisibleProducts;
+        int endIdx = Mathf.Min(startIdx + maxVisibleProducts, filteredProducts.Count);
+
+        for (int i = 0; i < maxVisibleProducts; i++)
         {
-            GameObject obj = GetPooledObject();
-            ProductItem item = obj.GetComponent<ProductItem>();
-            item.Initialize(products[i], this);
-            obj.SetActive(true);
+            if (startIdx + i < endIdx)
+            {
+                GameObject obj = GetPooledObject();
+                ProductItem item = obj.GetComponent<ProductItem>();
+                item.Initialize(filteredProducts[startIdx + i], this);
+                obj.SetActive(true);
+            }
         }
     }
 
@@ -112,15 +138,77 @@ public class ProductManager : MonoBehaviour
 
     public void ApplyFilters(List<string> categories, List<string> subcategories)
     {
-        var filtered = productData.products.FindAll(p =>
+        filteredProducts = productData.products.FindAll(p =>
             (categories.Count == 0 || categories.Contains(p.category)) &&
             (subcategories.Count == 0 || subcategories.Contains(p.subcategory)));
 
-        UpdateProducts(filtered);
+        currentPage = 0; // Reset to first page after filtering
+        UpdateProducts(currentPage);
+        nextButton.gameObject.SetActive(filteredProducts.Count > maxVisibleProducts);
+        prevButton.gameObject.SetActive(false);
+        scrollRect.verticalNormalizedPosition = 1f;
     }
 
     public void ResetFilters()
     {
-        UpdateProducts(productData.products);
+        filteredProducts = productData.products;
+        currentPage = 0;
+        UpdateProducts(currentPage);
     }
+
+    void NextPage()
+    {
+        if ((currentPage + 1) * maxVisibleProducts < filteredProducts.Count)
+        {
+            currentPage++;
+            UpdateProducts(currentPage);
+            prevButton.gameObject.SetActive(true);
+        }
+        if ((currentPage + 1) * maxVisibleProducts >= filteredProducts.Count)
+        {
+            nextButton.gameObject.SetActive(false);
+        }
+
+        // Scroll to top when next page is clicked
+        scrollRect.verticalNormalizedPosition = 1f;
+    }
+
+    void PrevPage()
+    {
+        if (currentPage > 0)
+        {
+            currentPage--;
+            UpdateProducts(currentPage);
+            nextButton.gameObject.SetActive(true);
+        }
+        if (currentPage == 0)
+        {
+            prevButton.gameObject.SetActive(false);
+        }
+        scrollRect.verticalNormalizedPosition = 1f;
+    }
+
+    void OnScrollValueChanged(Vector2 scrollPosition)
+    {
+        nextButton.gameObject.SetActive(scrollPosition.y <= 0.01f && (currentPage + 1) * maxVisibleProducts < filteredProducts.Count);
+        prevButton.gameObject.SetActive(scrollPosition.y <= 0.01f && currentPage != 0);
+
+    }
+
+    public void ShowProductDetails(Product product)
+    {
+        productDetailPanel.SetActive(true);
+        detailProductName.text = product.name;
+        detailProductDescription.text = product.description;
+        detailProductPrice.text = "$" + product.price.ToString("F2");
+
+        productParent.gameObject.SetActive(false); // Hide product list
+    }
+
+    public void CloseProductDetails()
+    {
+        productDetailPanel.SetActive(false);
+        productParent.gameObject.SetActive(true); // Show product list again
+    }
+
 }

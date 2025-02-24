@@ -31,6 +31,574 @@
       "subcategory": "Kids",
       "description": "24K gold necklace",
       "price": 599.99
+    },
+    {
+      "id": 5,
+      "name": "Digital Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Advanced digital sports watch",
+      "price": 89.99
+    },
+    {
+      "id": 6,
+      "name": "Denim Jacket",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Classic blue denim jacket",
+      "price": 79.99
+    },
+    {
+      "id": 7,
+      "name": "Diamond Ring",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond-studded ring",
+      "price": 899.99
+    },
+    {
+      "id": 8,
+      "name": "Smartwatch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Colorful smartwatch with GPS",
+      "price": 59.99
+    },
+    {
+      "id": 9,
+      "name": "Winter Coat",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Warm and stylish winter coat",
+      "price": 149.99
+    },
+    {
+      "id": 10,
+      "name": "Silver Bracelet",
+      "category": "Jewelry",
+      "subcategory": "Kids",
+      "description": "Stylish silver bracelet for kids",
+      "price": 49.99
+    },
+    {
+      "id": 11,
+      "name": "Classic Analog Watch",
+      "category": "Watches",
+      "subcategory": "Female",
+      "description": "Elegant classic analog watch",
+      "price": 139.99
+    },
+    {
+      "id": 12,
+      "name": "Casual Hoodie",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Comfortable cotton hoodie",
+      "price": 49.99
+    },
+    {
+      "id": 13,
+      "name": "Platinum Pendant",
+      "category": "Jewelry",
+      "subcategory": "Male",
+      "description": "Sophisticated platinum pendant",
+      "price": 499.99
+    },
+    {
+      "id": 14,
+      "name": "Sport Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Water-resistant sport watch",
+      "price": 109.99
+    },
+    {
+      "id": 15,
+      "name": "Kids Fashion Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Trendy kids' watch with cartoon designs",
+      "price": 39.99
+    },
+    {
+      "id": 16,
+      "name": "Designer Ring",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Custom-designed diamond ring",
+      "price": 749.99
+    },
+    {
+      "id": 17,
+      "name": "Trendy Sunglasses",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Polarized stylish sunglasses",
+      "price": 59.99
+    },
+    {
+      "id": 18,
+      "name": "Luxury Wristwatch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Premium luxury wristwatch",
+      "price": 299.99
+    },
+    {
+      "id": 19,
+      "name": "Casual T-Shirt",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Soft cotton t-shirt",
+      "price": 29.99
+    },
+    {
+      "id": 20,
+      "name": "Gold Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Shiny 22K gold earrings",
+      "price": 399.99
+    },
+    {
+      "id": 21,
+      "name": "Fashion Sneakers",
+      "category": "Cloths",
+      "subcategory": "Kids",
+      "description": "Trendy sneakers for kids",
+      "price": 49.99
+    },
+    {
+      "id": 22,
+      "name": "Luxury Bracelet",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant gold and diamond bracelet",
+      "price": 599.99
+    },
+    {
+      "id": 23,
+      "name": "Running Shoes",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "High-performance running shoes",
+      "price": 89.99
+    },
+    {
+      "id": 24,
+      "name": "Classic Fedora Hat",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Stylish classic fedora hat",
+      "price": 39.99
+    },
+    {
+      "id": 25,
+      "name": "Luxury Gold Watch",
+      "category": "Watches",
+      "subcategory": "Female",
+      "description": "Exquisite gold-plated wristwatch",
+      "price": 499.99
+    },
+    {
+      "id": 26,
+      "name": "Leather Belt",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Genuine leather belt",
+      "price": 49.99
+    },
+    {
+      "id": 27,
+      "name": "Diamond Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond earrings",
+      "price": 699.99
+    },
+    {
+      "id": 28,
+      "name": "Kids Analog Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Colorful analog watch for kids",
+      "price": 29.99
+    },
+    {
+      "id": 29,
+      "name": "Winter Scarf",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter scarf",
+      "price": 39.99
+    },
+    {
+      "id": 30,
+      "name": "Silver Necklace",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant silver necklace",
+      "price": 199.99
+    },
+    {
+      "id": 31,
+      "name": "Sports Hoodie",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable sports hoodie",
+      "price": 59.99
+    },
+    {
+      "id": 32,
+      "name": "Gold Bracelet",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Shiny gold bracelet",
+      "price": 499.99
+    },
+    {
+      "id": 33,
+      "name": "Kids Digital Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Fun digital watch for kids",
+      "price": 34.99
+    },
+    {
+      "id": 34,
+      "name": "Denim Jeans",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Classic blue denim jeans",
+      "price": 69.99
+    },
+    {
+      "id": 35,
+      "name": "Pearl Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant pearl earrings",
+      "price": 299.99
+    },
+    {
+      "id": 36,
+      "name": "Luxury Analog Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Premium luxury analog watch",
+      "price": 399.99
+    },
+    {
+      "id": 37,
+      "name": "Winter Gloves",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter gloves",
+      "price": 29.99
+    },
+    {
+      "id": 38,
+      "name": "Gold Pendant",
+      "category": "Jewelry",
+      "subcategory": "Male",
+      "description": "Sophisticated gold pendant",
+      "price": 349.99
+    },
+    {
+      "id": 39,
+      "name": "Kids Sport Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Durable sport watch for kids",
+      "price": 44.99
+    },
+    {
+      "id": 40,
+      "name": "Casual Blazer",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Stylish casual blazer",
+      "price": 129.99
+    },
+    {
+      "id": 41,
+      "name": "Diamond Necklace",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond necklace",
+      "price": 799.99
+    },
+    {
+      "id": 42,
+      "name": "Luxury Digital Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "High-end digital watch",
+      "price": 199.99
+    },
+    {
+      "id": 43,
+      "name": "Summer Dress",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Light and comfortable summer dress",
+      "price": 59.99
+    },
+    {
+      "id": 44,
+      "name": "Silver Ring",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant silver ring",
+      "price": 149.99
+    },
+    {
+      "id": 45,
+      "name": "Kids Leather Jacket",
+      "category": "Cloths",
+      "subcategory": "Kids",
+      "description": "Stylish leather jacket for kids",
+      "price": 79.99
+    },
+    {
+      "id": 46,
+      "name": "Platinum Ring",
+      "category": "Jewelry",
+      "subcategory": "Male",
+      "description": "Sophisticated platinum ring",
+      "price": 599.99
+    },
+    {
+      "id": 47,
+      "name": "Classic Leather Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Classic leather strap watch",
+      "price": 159.99
+    },
+    {
+      "id": 48,
+      "name": "Winter Boots",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter boots",
+      "price": 99.99
+    },
+    {
+      "id": 49,
+      "name": "Gold Chain",
+      "category": "Jewelry",
+      "subcategory": "Male",
+      "description": "Shiny gold chain",
+      "price": 299.99
+    },
+    {
+      "id": 50,
+      "name": "Kids Digital Sport Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Durable digital sport watch for kids",
+      "price": 39.99
+    },
+    {
+      "id": 51,
+      "name": "Casual Shirt",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable casual shirt",
+      "price": 49.99
+    },
+    {
+      "id": 52,
+      "name": "Diamond Bracelet",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond bracelet",
+      "price": 899.99
+    },
+    {
+      "id": 53,
+      "name": "Luxury Chronograph Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "High-end chronograph watch",
+      "price": 499.99
+    },
+    {
+      "id": 54,
+      "name": "Winter Jacket",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter jacket",
+      "price": 149.99
+    },
+    {
+      "id": 55,
+      "name": "Gold Ring",
+      "category": "Jewelry",
+      "subcategory": "Male",
+      "description": "Shiny gold ring",
+      "price": 399.99
+    },
+    {
+      "id": 56,
+      "name": "Kids Analog Sport Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Durable analog sport watch for kids",
+      "price": 34.99
+    },
+    {
+      "id": 57,
+      "name": "Casual Pants",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable casual pants",
+      "price": 59.99
+    },
+    {
+      "id": 58,
+      "name": "Silver Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant silver earrings",
+      "price": 149.99
+    },
+    {
+      "id": 59,
+      "name": "Luxury Smartwatch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "High-end smartwatch with advanced features",
+      "price": 299.99
+    },
+    {
+      "id": 60,
+      "name": "Winter Sweater",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter sweater",
+      "price": 69.99
+    },
+    {
+      "id": 61,
+      "name": "Gold Chain Bracelet",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant gold chain bracelet",
+      "price": 499.99
+    },
+    {
+      "id": 62,
+      "name": "Kids Luxury Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Stylish luxury watch for kids",
+      "price": 49.99
+    },
+    {
+      "id": 63,
+      "name": "Casual Jacket",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable casual jacket",
+      "price": 89.99
+    },
+    {
+      "id": 64,
+      "name": "Diamond Pendant",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond pendant",
+      "price": 599.99
+    },
+    {
+      "id": 65,
+      "name": "Luxury Leather Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Premium leather strap watch",
+      "price": 349.99
+    },
+    {
+      "id": 66,
+      "name": "Winter Leggings",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter leggings",
+      "price": 39.99
+    },
+    {
+      "id": 67,
+      "name": "Gold Hoop Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Shiny gold hoop earrings",
+      "price": 299.99
+    },
+    {
+      "id": 68,
+      "name": "Kids Digital Sport Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Durable digital sport watch for kids",
+      "price": 39.99
+    },
+    {
+      "id": 69,
+      "name": "Casual Sneakers",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable casual sneakers",
+      "price": 79.99
+    },
+    {
+      "id": 70,
+      "name": "Silver Pendant",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant silver pendant",
+      "price": 199.99
+    },
+    {
+      "id": 71,
+      "name": "Luxury Gold Watch",
+      "category": "Watches",
+      "subcategory": "Male",
+      "description": "Exquisite gold-plated wristwatch",
+      "price": 599.99
+    },
+    {
+      "id": 72,
+      "name": "Winter Hat",
+      "category": "Cloths",
+      "subcategory": "Female",
+      "description": "Warm and stylish winter hat",
+      "price": 29.99
+    },
+    {
+      "id": 73,
+      "name": "Diamond Hoop Earrings",
+      "category": "Jewelry",
+      "subcategory": "Female",
+      "description": "Elegant diamond hoop earrings",
+      "price": 799.99
+    },
+    {
+      "id": 74,
+      "name": "Kids Analog Watch",
+      "category": "Watches",
+      "subcategory": "Kids",
+      "description": "Colorful analog watch for kids",
+      "price": 29.99
+    },
+    {
+      "id": 75,
+      "name": "Casual Shorts",
+      "category": "Cloths",
+      "subcategory": "Male",
+      "description": "Comfortable casual shorts",
+      "price": 39.99
     }
   ]
 }
